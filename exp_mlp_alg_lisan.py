@@ -1,0 +1,306 @@
+import pandas as pd
+import numpy as np
+import joblib 
+import pickle
+
+dataframes = []
+
+# Load the uploaded Excel file
+# file7_path_A = '/mnt/d/jinyfeng/datas/jinyfeng(2)/7/7-train_val_lisan_A.csv'
+# file7_path_B = '/mnt/d/jinyfeng/datas/jinyfeng(2)/7/7-train_val_lisan_B.csv'
+# file7_path_C = '/mnt/d/jinyfeng/datas/jinyfeng(2)/7/7-train_val_lisan_C.csv'
+# file7_path_D = '/mnt/d/jinyfeng/datas/jinyfeng(2)/7/7-train_val_lisan_D.csv'
+# data7_A = pd.read_csv(file7_path_A)
+# data7_B = pd.read_csv(file7_path_B)
+# data7_C = pd.read_csv(file7_path_C)
+# data7_D = pd.read_csv(file7_path_D)
+# dataframes.append(data7_A)
+# dataframes.append(data7_B)
+# dataframes.append(data7_C)
+# dataframes.append(data7_D)
+
+# file8_path_A = '/mnt/d/jinyfeng/datas/jinyfeng(2)/8/8-train_val_lisan_A.csv'
+# file8_path_B = '/mnt/d/jinyfeng/datas/jinyfeng(2)/8/8-train_val_lisan_B.csv'
+# file8_path_C = '/mnt/d/jinyfeng/datas/jinyfeng(2)/8/8-train_val_lisan_C.csv'
+# file8_path_D = '/mnt/d/jinyfeng/datas/jinyfeng(2)/8/8-train_val_lisan_D.csv'
+# data8_A = pd.read_csv(file8_path_A)
+# data8_B = pd.read_csv(file8_path_B)
+# data8_C = pd.read_csv(file8_path_C)
+# data8_D = pd.read_csv(file8_path_D)
+# dataframes.append(data8_A)
+# dataframes.append(data8_B)
+# dataframes.append(data8_C)
+# dataframes.append(data8_D)
+
+# file9_path_A = '/mnt/d/jinyfeng/datas/jinyfeng(2)/9/9-train_val_lisan_A.csv'
+# file9_path_B = '/mnt/d/jinyfeng/datas/jinyfeng(2)/9/9-train_val_lisan_B.csv'
+# file9_path_C = '/mnt/d/jinyfeng/datas/jinyfeng(2)/9/9-train_val_lisan_C.csv'
+# file9_path_D = '/mnt/d/jinyfeng/datas/jinyfeng(2)/9/9-train_val_lisan_D.csv'
+# data9_A = pd.read_csv(file9_path_A)
+# data9_B = pd.read_csv(file9_path_B)
+# data9_C = pd.read_csv(file9_path_C)
+# data9_D = pd.read_csv(file9_path_D)
+# dataframes.append(data9_A)
+# dataframes.append(data9_B)
+# dataframes.append(data9_C)
+# dataframes.append(data9_D)
+
+# file10_path_A = '/mnt/d/jinyfeng/datas/jinyfeng(2)/10/10-train_val_lisan_A.csv'
+# file10_path_B = '/mnt/d/jinyfeng/datas/jinyfeng(2)/10/10-train_val_lisan_B.csv'
+# file10_path_C = '/mnt/d/jinyfeng/datas/jinyfeng(2)/10/10-train_val_lisan_C.csv'
+# file10_path_D = '/mnt/d/jinyfeng/datas/jinyfeng(2)/10/10-train_val_lisan_D.csv'
+# data10_A = pd.read_csv(file10_path_A)
+# data10_B = pd.read_csv(file10_path_B)
+# data10_C = pd.read_csv(file10_path_C)
+# data10_D = pd.read_csv(file10_path_D)
+# dataframes.append(data10_A)
+# dataframes.append(data10_B)
+# dataframes.append(data10_C)
+# dataframes.append(data10_D)
+
+# file11_path_A = '/mnt/d/jinyfeng/datas/jinyfeng(2)/11/11-train_val_lisan_A.csv'
+# file11_path_B = '/mnt/d/jinyfeng/datas/jinyfeng(2)/11/11-train_val_lisan_B.csv'
+# file11_path_C = '/mnt/d/jinyfeng/datas/jinyfeng(2)/11/11-train_val_lisan_C.csv'
+# file11_path_D = '/mnt/d/jinyfeng/datas/jinyfeng(2)/11/11-train_val_lisan_D.csv'
+# data11_A = pd.read_csv(file11_path_A)
+# data11_B = pd.read_csv(file11_path_B)
+# data11_C = pd.read_csv(file11_path_C)
+# data11_D = pd.read_csv(file11_path_D)
+# dataframes.append(data11_A)
+# dataframes.append(data11_B)
+# dataframes.append(data11_C)
+# dataframes.append(data11_D)
+
+file12_path_A = '/mnt/d/jinyfeng/datas/jinyfeng(2)/12/12-train_val_lisan_A.csv'
+file12_path_B = '/mnt/d/jinyfeng/datas/jinyfeng(2)/12/12-train_val_lisan_B.csv'
+file12_path_C = '/mnt/d/jinyfeng/datas/jinyfeng(2)/12/12-train_val_lisan_C.csv'
+file12_path_D = '/mnt/d/jinyfeng/datas/jinyfeng(2)/12/12-train_val_lisan_D.csv'
+data12_A = pd.read_csv(file12_path_A)
+data12_B = pd.read_csv(file12_path_B)
+data12_C = pd.read_csv(file12_path_C)
+data12_D = pd.read_csv(file12_path_D)
+dataframes.append(data12_A)
+dataframes.append(data12_B)
+dataframes.append(data12_C)
+dataframes.append(data12_D)
+
+file13_path_A = '/mnt/d/jinyfeng/datas/jinyfeng(2)/13/13-train_val_lisan_A.csv'
+file13_path_B = '/mnt/d/jinyfeng/datas/jinyfeng(2)/13/13-train_val_lisan_B.csv'
+file13_path_C = '/mnt/d/jinyfeng/datas/jinyfeng(2)/13/13-train_val_lisan_C.csv'
+file13_path_D = '/mnt/d/jinyfeng/datas/jinyfeng(2)/13/13-train_val_lisan_D.csv'
+data13_A = pd.read_csv(file13_path_A)
+data13_B = pd.read_csv(file13_path_B)
+data13_C = pd.read_csv(file13_path_C)
+data13_D = pd.read_csv(file13_path_D)
+dataframes.append(data13_A)
+dataframes.append(data13_B)
+dataframes.append(data13_C)
+dataframes.append(data13_D)
+
+file14_path_A = '/mnt/d/jinyfeng/datas/jinyfeng(2)/14/14-train_val_lisan_A.csv'
+file14_path_B = '/mnt/d/jinyfeng/datas/jinyfeng(2)/14/14-train_val_lisan_B.csv'
+file14_path_C = '/mnt/d/jinyfeng/datas/jinyfeng(2)/14/14-train_val_lisan_C.csv'
+file14_path_D = '/mnt/d/jinyfeng/datas/jinyfeng(2)/14/14-train_val_lisan_D.csv'
+data14_A = pd.read_csv(file14_path_A)
+data14_B = pd.read_csv(file14_path_B)
+data14_C = pd.read_csv(file14_path_C)
+data14_D = pd.read_csv(file14_path_D)
+dataframes.append(data14_A)
+dataframes.append(data14_B)
+dataframes.append(data14_C)
+dataframes.append(data14_D)
+
+file15_path_A = '/mnt/d/jinyfeng/datas/jinyfeng(2)/15/15-train_val_lisan_A.csv'
+file15_path_B = '/mnt/d/jinyfeng/datas/jinyfeng(2)/15/15-train_val_lisan_B.csv'
+file15_path_C = '/mnt/d/jinyfeng/datas/jinyfeng(2)/15/15-train_val_lisan_C.csv'
+file15_path_D = '/mnt/d/jinyfeng/datas/jinyfeng(2)/15/15-train_val_lisan_D.csv'
+data15_A = pd.read_csv(file15_path_A)
+data15_B = pd.read_csv(file15_path_B)
+data15_C = pd.read_csv(file15_path_C)
+data15_D = pd.read_csv(file15_path_D)
+dataframes.append(data15_A)
+dataframes.append(data15_B)
+dataframes.append(data15_C)
+dataframes.append(data15_D)
+
+file16_path_A = '/mnt/d/jinyfeng/datas/jinyfeng(2)/16/16-train_val_lisan_A.csv'
+file16_path_B = '/mnt/d/jinyfeng/datas/jinyfeng(2)/16/16-train_val_lisan_B.csv'
+file16_path_C = '/mnt/d/jinyfeng/datas/jinyfeng(2)/16/16-train_val_lisan_C.csv'
+file16_path_D = '/mnt/d/jinyfeng/datas/jinyfeng(2)/16/16-train_val_lisan_D.csv'
+data16_A = pd.read_csv(file16_path_A)
+data16_B = pd.read_csv(file16_path_B)
+data16_C = pd.read_csv(file16_path_C)
+data16_D = pd.read_csv(file16_path_D)
+dataframes.append(data16_A)
+dataframes.append(data16_B)
+dataframes.append(data16_C)
+dataframes.append(data16_D)
+
+file17_path_A = '/mnt/d/jinyfeng/datas/jinyfeng(2)/17/17-train_val_lisan_A.csv'
+file17_path_B = '/mnt/d/jinyfeng/datas/jinyfeng(2)/17/17-train_val_lisan_B.csv'
+file17_path_C = '/mnt/d/jinyfeng/datas/jinyfeng(2)/17/17-train_val_lisan_C.csv'
+file17_path_D = '/mnt/d/jinyfeng/datas/jinyfeng(2)/17/17-train_val_lisan_D.csv'
+data17_A = pd.read_csv(file17_path_A)
+data17_B = pd.read_csv(file17_path_B)
+data17_C = pd.read_csv(file17_path_C)
+data17_D = pd.read_csv(file17_path_D)
+dataframes.append(data17_A)
+dataframes.append(data17_B)
+dataframes.append(data17_C)
+dataframes.append(data17_D)
+
+# # Concatenate all dataframes into one
+combined_df = pd.concat(dataframes, ignore_index=True)
+print(combined_df.shape)
+
+
+from sklearn.model_selection import train_test_split
+from sklearn.neural_network import MLPClassifier
+from sklearn.multioutput import MultiOutputClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+
+
+# get the training datas
+# Define the input features and the target variable
+# X = data[['ANGLE', 'WEIGHT', 'WEIGHT_LOCATION', 'UX', 'UY', 'ROTX', 'ROTY']]
+X = combined_df[['SECTION_NUMBER', 'ANGLE', 'WEIGHT', 'WEIGHT_LOCATION', 'UX', 'UY', 'ROTX', 'ROTY']]
+y = combined_df['DAMAGE_LOCATION']
+
+# Split the dataset into training and testing sets (80% training, 20% testing)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, shuffle=True)
+# txtsave = '/mnt/d/jinyfeng/datas/jinyfeng(2)/y_test.txt'
+# with open(txtsave,'w') as f:
+#     f.writelines(str(y_test))
+print(X_train.shape, y_train.shape)
+print(X_test.shape, len(X_test), type(y_test), y_test.shape, len(y_test))
+
+# Standardize the features
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+
+# # Train the MLP model
+# Initialize the MLPClassifier with a random state for reproducibility
+# mlp = MLPClassifier(hidden_layer_sizes=(256), max_iter=1000, random_state=42)
+# mlp = MLPClassifier(hidden_layer_sizes=(128,64), activation='logistic', max_iter=1000, solver='sgd', random_state=3)
+# mlp =  MLPClassifier(hidden_layer_sizes=(100,50), alpha=1e-5, max_iter=2000)
+mlp = MLPClassifier(solver='lbfgs', hidden_layer_sizes=(80, 40), alpha=1e-5, max_iter=40000)
+# mlp = MLPClassifier(hidden_layer_sizes=(50, 30), max_iter=1000, activation='logistic', solver='adam', random_state=42)
+# solver='lbfgs', 'adam', 'sgd', alpha=1e-4, 
+
+mlp.fit(X_train_scaled, y_train)
+
+joblib.dump(mlp, "mlp_train_model_lisan_12-17_iter4w.pkl")
+
+# Predict the damage location for both training and testing sets
+y_train_pred = clf.predict(X_train_scaled)
+y_test_pred = clf.predict(X_test_scaled)
+print(len(y_test), y_test.shape, y_test_pred.shape)
+# print(X_test)
+# print(y_test, y_test.shape)
+# print(y_test_pred, y_test_pred.shape)
+
+y_train = np.array(y_train)
+y_test = np.array(y_test)
+
+# Calculate the accuracy for training and testing sets
+train_acc = clf.score(X_train_scaled, y_train)
+test_acc = clf.score(X_test_scaled, y_test)
+print('train_acc, test_acc=========', train_acc, test_acc)
+
+
+# loss_curve = mlp.loss_curve_
+# # print(loss_curve)
+# # Plot loss curve
+# plt.figure(figsize=(10, 5))
+# plt.plot(range(len(loss_curve)), loss_curve)
+# plt.title('Loss Curve')
+# plt.xlabel('Iteration')
+# plt.ylabel('Loss')
+# plt.grid(True)
+# plt.show()
+
+
+savepath = '/mnt/d/jinyfeng/datas/jinyfeng(2)/train_val_lisan12-17_pred.csv'
+df = pd.DataFrame()
+X_test = np.array(X_test)
+df[['SECTION_NUMBER', 'ANGLE', 'WEIGHT', 'WEIGHT_LOCATION', 'UX', 'UY', 'ROTX', 'ROTY']] = X_test
+df[['DAMAGE_LOCATION', 'LABEL']] = np.array(y_test)
+df[['DAMAGE_LOCATION_pred', 'LABEL_pred']] = np.array(y_test_pred)
+
+# df['ANGLE'] = X_test[:,0]
+# df['WEIGHT'] = X_test[:,1]
+# df['WEIGHT_LOCATION'] = X_test[:,2]
+# df['UX'] = X_test[:,3]
+# df['UY'] = X_test[:,4]
+# df['ROTX'] = X_test[:,5]
+# df['ROTY'] = X_test[:,6]
+# df['DAMAGE_LOCATION'] = np.array(y_test)
+# df['DAMAGE_LOCATION_PRED'] = y_test_pred
+# df.to_csv(savepath, mode = 'w', index =False)   #保存到csv,  mode=a，以追加模式写入,header表示列名，默认为true,index表示行名，默认为true，再次写入不需要行名
+
+
+
+
+
+
+# # SVM
+# # Define the features and the target variable for the new data
+
+# from sklearn.svm import SVC
+# from sklearn.metrics import accuracy_score
+
+# # Train an SVM classifier on the new training data
+# svm_classifier = SVC(kernel='rbf', probability=True, random_state=42)
+# svm_classifier.fit(X_train_scaled, y_train)
+
+# # Predict the DAMAGE_LOCATION for the new test set
+# svm_predictions_train = svm_classifier.predict(X_train_scaled)
+# svm_predictions_test = svm_classifier.predict(X_test_scaled)
+
+# # Calculate the accuracy of the SVM classifier on the new test set
+# svm_accuracy_train = accuracy_score(y_train, svm_predictions_train)
+# svm_accuracy_test = accuracy_score(y_test, svm_predictions_test)
+# print('svm_accuracy_train, svm_accuracy_test==========', svm_accuracy_train, svm_accuracy_test)
+
+
+
+
+
+# # #随机森林，决策树
+
+# # Initialize the Random Forest classifier
+# rf_classifier = RandomForestClassifier(random_state=42)
+# # Train the Random Forest classifier
+# rf_classifier.fit(X_train_scaled, y_train)
+# # Make predictions using the Random Forest classifier
+# rf_pred_train = rf_classifier.predict(X_train_scaled)
+# rf_pred_test = rf_classifier.predict(X_test_scaled)
+
+# # Initialize the Decision Tree classifier
+# dt_classifier = DecisionTreeClassifier(random_state=42)
+# # Train the Decision Tree classifier
+# dt_classifier.fit(X_train_scaled, y_train)
+# # Make predictions using the Decision Tree classifier
+# dt_pred_train = dt_classifier.predict(X_train_scaled)
+# dt_pred_test = dt_classifier.predict(X_test_scaled)
+
+# # Calculate the accuracy for both classifiers
+# rf_accuracy_train = accuracy_score(y_train, rf_pred_train)
+# rf_accuracy_test = accuracy_score(y_test, rf_pred_test)
+
+# dt_accuracy_train = accuracy_score(y_train, dt_pred_train)
+# dt_accuracy_test = accuracy_score(y_test, dt_pred_test)
+
+# print('rf_accuracy_train, rf_accuracy_test=========', rf_accuracy_train, rf_accuracy_test)
+# print('dt_accuracy_train, dt_accuracy_test=========', dt_accuracy_train, dt_accuracy_test)
+
+
+
+
