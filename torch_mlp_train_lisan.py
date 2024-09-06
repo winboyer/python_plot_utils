@@ -189,34 +189,34 @@ data17z_loc_D = pd.read_csv(file17z_loc_path_D)
 # dataframes_all.append(data11_B)
 # dataframes_all.append(data11_C)
 # dataframes_all.append(data11_D)
-# dataframes_all.append(data12_A)
-# dataframes_all.append(data12_B)
-# dataframes_all.append(data12_C)
-# dataframes_all.append(data12_D)
-# dataframes_all.append(data13_A)
-# dataframes_all.append(data13_B)
-# dataframes_all.append(data13_C)
-# dataframes_all.append(data13_D)
-# dataframes_all.append(data14_A)
-# dataframes_all.append(data14_B)
-# dataframes_all.append(data14_C)
-# dataframes_all.append(data14_D)
-# dataframes_all.append(data15_A)
-# dataframes_all.append(data15_B)
-# dataframes_all.append(data15_C)
-# dataframes_all.append(data15_D)
-# dataframes_all.append(data16_A)
-# dataframes_all.append(data16_B)
-# dataframes_all.append(data16_C)
-# dataframes_all.append(data16_D)
-# dataframes_all.append(data17_A)
-# dataframes_all.append(data17_B)
-# dataframes_all.append(data17_C)
-# dataframes_all.append(data17_D)
-dataframes_all.append(data17z_A)
-dataframes_all.append(data17z_B)
-dataframes_all.append(data17z_C)
-dataframes_all.append(data17z_D)
+dataframes_all.append(data12_A)
+dataframes_all.append(data12_B)
+dataframes_all.append(data12_C)
+dataframes_all.append(data12_D)
+dataframes_all.append(data13_A)
+dataframes_all.append(data13_B)
+dataframes_all.append(data13_C)
+dataframes_all.append(data13_D)
+dataframes_all.append(data14_A)
+dataframes_all.append(data14_B)
+dataframes_all.append(data14_C)
+dataframes_all.append(data14_D)
+dataframes_all.append(data15_A)
+dataframes_all.append(data15_B)
+dataframes_all.append(data15_C)
+dataframes_all.append(data15_D)
+dataframes_all.append(data16_A)
+dataframes_all.append(data16_B)
+dataframes_all.append(data16_C)
+dataframes_all.append(data16_D)
+dataframes_all.append(data17_A)
+dataframes_all.append(data17_B)
+dataframes_all.append(data17_C)
+dataframes_all.append(data17_D)
+# dataframes_all.append(data17z_A)
+# dataframes_all.append(data17z_B)
+# dataframes_all.append(data17z_C)
+# dataframes_all.append(data17z_D)
 # dataframes_all.append(data17z_yingli_A)
 # dataframes_all.append(data17z_yingli_B)
 # dataframes_all.append(data17z_yingli_C)
@@ -226,34 +226,34 @@ dataframes_all.append(data17z_D)
 # dataframes_all.append(data17z_loc_C)
 # dataframes_all.append(data17z_loc_D)
 
-# dataframes.append(data12_A)
-# dataframes.append(data12_B)
-# dataframes.append(data12_C)
-# dataframes.append(data12_D)
-# dataframes.append(data13_A)
-# dataframes.append(data13_B)
-# dataframes.append(data13_C)
-# dataframes.append(data13_D)
-# dataframes.append(data14_A)
-# dataframes.append(data14_B)
-# dataframes.append(data14_C)
-# dataframes.append(data14_D)
-# dataframes.append(data15_A)
-# dataframes.append(data15_B)
-# dataframes.append(data15_C)
-# dataframes.append(data15_D)
-# dataframes.append(data16_A)
-# dataframes.append(data16_B)
-# dataframes.append(data16_C)
-# dataframes.append(data16_D)
-# dataframes.append(data17_A)
-# dataframes.append(data17_B)
-# dataframes.append(data17_C)
-# dataframes.append(data17_D)
-dataframes.append(data17z_A)
-dataframes.append(data17z_B)
-dataframes.append(data17z_C)
-dataframes.append(data17z_D)
+dataframes.append(data12_A)
+dataframes.append(data12_B)
+dataframes.append(data12_C)
+dataframes.append(data12_D)
+dataframes.append(data13_A)
+dataframes.append(data13_B)
+dataframes.append(data13_C)
+dataframes.append(data13_D)
+dataframes.append(data14_A)
+dataframes.append(data14_B)
+dataframes.append(data14_C)
+dataframes.append(data14_D)
+dataframes.append(data15_A)
+dataframes.append(data15_B)
+dataframes.append(data15_C)
+dataframes.append(data15_D)
+dataframes.append(data16_A)
+dataframes.append(data16_B)
+dataframes.append(data16_C)
+dataframes.append(data16_D)
+dataframes.append(data17_A)
+dataframes.append(data17_B)
+dataframes.append(data17_C)
+dataframes.append(data17_D)
+# dataframes.append(data17z_A)
+# dataframes.append(data17z_B)
+# dataframes.append(data17z_C)
+# dataframes.append(data17z_D)
 # dataframes.append(data17z_yingli_A)
 # dataframes.append(data17z_yingli_B)
 # dataframes.append(data17z_yingli_C)
@@ -280,10 +280,11 @@ X_all_cond = combined_df_all[['SECTION_NUMBER', 'ANGLE', 'WEIGHT', 'WEIGHT_LOCAT
 
 # X_all_UXY = combined_df_all[['UX', 'UY']].to_numpy().astype(np.int_)
 # X_all_UXY = combined_df_all[['UX', 'UY']].to_numpy()
-# X_all_ROTXY = combined_df_all[['ROTX', 'ROTY']].to_numpy()*57.3
-# X_all_ROTXY = np.around(X_all_ROTXY, 2) #使用around()函数保留小数位数
+X_all_ROTXY = combined_df_all[['ROTX', 'ROTY']].to_numpy()*57.3
+X_all_ROTXY = np.around(X_all_ROTXY, 2) #使用around()函数保留小数位数
 # X_all = np.concatenate((X_all_cond, X_all_UXY), axis=1)
-# # X_all = np.concatenate((X_all_cond, X_all_UXY, X_all_ROTXY), axis=1)
+X_all = np.concatenate((X_all_cond, X_all_ROTXY), axis=1)
+# X_all = np.concatenate((X_all_cond, X_all_UXY, X_all_ROTXY), axis=1)
 
 # X_all_UXYZ = combined_df_all[['UX_1', 'UY_1', 'UZ_1', 'UX_2', 'UY_2', 'UZ_2']].to_numpy().astype(np.int_)
 # X_all_UXYZ = combined_df_all[['UX_1', 'UY_1', 'UZ_1', 'UX_2', 'UY_2', 'UZ_2']].to_numpy()
@@ -292,21 +293,22 @@ X_all_cond = combined_df_all[['SECTION_NUMBER', 'ANGLE', 'WEIGHT', 'WEIGHT_LOCAT
 # X_all_UXYZ = combined_df_all[['UX_2', 'UY_2', 'UZ_2', 'UX_3', 'UY_3', 'UZ_3']].to_numpy().astype(np.int_)
 # X_all_UXYZ = combined_df_all[['UX_2', 'UY_2', 'UZ_2', 'UX_3', 'UY_3', 'UZ_3']].to_numpy()
 
-X_all_UXYZ = combined_df_all[['UX', 'UY', 'UZ']].to_numpy().astype(np.int_)
-X_all_UXYZ = (X_all_UXYZ //10 ) * 10
+# X_all_UXYZ = combined_df_all[['UX', 'UY', 'UZ']].to_numpy().astype(np.int_)
+# X_all_UXYZ = (X_all_UXYZ //10 ) * 10
 # X_all_UXYZ = combined_df_all[['UX', 'UY', 'UZ', 'A19', 'B19', 'C19', 'D19']].to_numpy().astype(np.int_)
 # X_all_UXYZ = combined_df_all[['UX', 'UY', 'UZ']].to_numpy()
 # X_all_ROTXYZ = combined_df_all[['ROTX', 'ROTY', 'ROTZ']].to_numpy()*57.3
 # X_all_ROTXYZ = np.around(X_all_ROTXYZ, 2) #使用around()函数保留小数位数
 # X_all = np.concatenate((X_all_cond, X_all_UXYZ, X_all_ROTXYZ), axis=1)
-X_all = np.concatenate((X_all_cond, X_all_UXYZ), axis=1)
+# X_all = np.concatenate((X_all_cond, X_all_UXYZ), axis=1)
 
 # print('X_all.shape=========', X_all.shape)
 y_all = combined_df_all[['DAMAGE_LOCATION', 'LABEL']].to_numpy()
 # y_all_loc = combined_df_all['DAMAGE_LOCATION'].to_numpy()
-y_all_loc = y_all[:,0]
-y_all_loc[y_all_loc>0]=1
-y_all[:,0] = y_all_loc
+# y_all_loc = y_all[:,0]
+# y_all_loc[y_all_loc>0]=1
+# y_all[:,0] = y_all_loc
+
 # y_all_label = combined_df_all['LABEL'].to_numpy()
 # y_all = np.concatenate((y_all_loc, y_all_label), axis=1)
 
@@ -314,19 +316,20 @@ y_all[:,0] = y_all_loc
 X_all_scaled = StandardScaler().fit(X_all)
 
 # X = combined_df[['SECTION_NUMBER', 'ANGLE', 'WEIGHT', 'WEIGHT_LOCATION', 'UX', 'UY', 'ROTX', 'ROTY']]
-# X_cond = combined_df[['SECTION_NUMBER', 'ANGLE', 'WEIGHT', 'WEIGHT_LOCATION']].to_numpy()
+X_cond = combined_df[['SECTION_NUMBER', 'ANGLE', 'WEIGHT', 'WEIGHT_LOCATION']].to_numpy()
 # X_UXY = combined_df[['UX', 'UY']].to_numpy().astype(np.int_)
 # X_UXY = combined_df[['UX', 'UY']].to_numpy()
-# X_ROTXY = combined_df[['ROTX', 'ROTY']].to_numpy()*57.3
-# X_ROTXY = np.around(X_ROTXY, 2)
+X_ROTXY = combined_df[['ROTX', 'ROTY']].to_numpy()*57.3
+X_ROTXY = np.around(X_ROTXY, 2)
 # X = np.concatenate((X_cond, X_UXY), axis=1)
-# # X = np.concatenate((X_cond, X_UXY, X_ROTXY), axis=1)
+X = np.concatenate((X_cond, X_ROTXY), axis=1)
+# X = np.concatenate((X_cond, X_UXY, X_ROTXY), axis=1)
 
 # print('use the float UXUYZ !!!!!!!!')
 # print('use the int UXUYZ and round 2 ROTXYZ !!!!!!!!')
 # print('use the int UXUYZ and original ROTXYZ !!!!!!!!')
 # print('use the float UXUYZ and original ROTXYZ !!!!!!!!')
-X_cond = combined_df[['SECTION_NUMBER', 'ANGLE', 'WEIGHT', 'WEIGHT_LOCATION']].to_numpy()
+# X_cond = combined_df[['SECTION_NUMBER', 'ANGLE', 'WEIGHT', 'WEIGHT_LOCATION']].to_numpy()
 # print('=======UX_1+UX_2 int==========')
 # print('=======UX_1+UX_2==========')
 # print('=======UX_1+UX_3 int==========')
@@ -340,19 +343,19 @@ X_cond = combined_df[['SECTION_NUMBER', 'ANGLE', 'WEIGHT', 'WEIGHT_LOCATION']].t
 # X_UXYZ = combined_df[['UX_2', 'UY_2', 'UZ_2', 'UX_3', 'UY_3', 'UZ_3']].to_numpy().astype(np.int_)
 # X_UXYZ = combined_df[['UX_2', 'UY_2', 'UZ_2', 'UX_3', 'UY_3', 'UZ_3']].to_numpy()
 
-X_UXYZ = combined_df[['UX', 'UY', 'UZ']].to_numpy().astype(np.int_)
-X_UXYZ = (X_UXYZ //10 ) * 10
+# X_UXYZ = combined_df[['UX', 'UY', 'UZ']].to_numpy().astype(np.int_)
+# X_UXYZ = (X_UXYZ //10 ) * 10
 # X_UXYZ = combined_df[['UX', 'UY', 'UZ', 'A19', 'B19', 'C19', 'D19']].to_numpy().astype(np.int_)
 # X_UXYZ = combined_df[['UX', 'UY', 'UZ']].to_numpy()
 # X_ROTXYZ = combined_df[['ROTX', 'ROTY', 'ROTZ']].to_numpy()*57.3
 # X_ROTXYZ = np.around(X_ROTXYZ, 2)
 # X = np.concatenate((X_cond, X_UXYZ, X_ROTXYZ), axis=1)
-X = np.concatenate((X_cond, X_UXYZ), axis=1)
+# X = np.concatenate((X_cond, X_UXYZ), axis=1)
 
 y = combined_df[['DAMAGE_LOCATION', 'LABEL']].to_numpy()
-y_loc = y[:,0]
-y_loc[y_loc>0]=1
-y[:,0] = y_loc
+# y_loc = y[:,0]
+# y_loc[y_loc>0]=1
+# y[:,0] = y_loc
 
 # Split the dataset into training and testing sets (80% training, 20% testing)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, shuffle=True)
@@ -444,8 +447,8 @@ def init_weights(model_param):
         nn.init.kaiming_normal_(model_param.weight)
 
 # model = MLP()
-# model = TransformerClassifier(6, 19, 4)
-model = TransformerClassifier(7, 19, 4)
+model = TransformerClassifier(6, 19, 4)
+# model = TransformerClassifier(7, 19, 4)
 # model = TransformerClassifier(8, 19, 4)
 # model = TransformerClassifier(10, 19, 4)
 # model = TransformerClassifier(11, 19, 4)
@@ -587,7 +590,7 @@ for epoch in range(n_epochs):
         # print(temp % course)  # 这里的%本质也是分隔符
 # 保存7020的12-17节的int位移模型
 # torch.save(model.state_dict(), 'torch_model_transformer_7020_12-17XY_int_v2.pth')#只保存模型权重参数，不保存模型结构
-torch.save(model.state_dict(), 'torch_model_transformer_7020_17XYZ_int_v2.pth')
+torch.save(model.state_dict(), 'torch_model_transformer_7020_12-17ROTXY_19cls.pth')
 
 # torch.save(model.state_dict(), 'torch_model_transformer_v2.pth')#只保存模型权重参数，不保存模型结构
 # model.load_state_dict(torch.load(mymodel.pth))
